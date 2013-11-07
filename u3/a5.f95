@@ -3,6 +3,9 @@ program zyklus
   real(kind=8) :: x, x_min, x_max, summe, x_mitt
   integer :: n, i = 2
 
+  
+end program name
+
   do
      write (*,*) 'bitte Anzahl der einzulesenden Zahlen(natuerliche Zahlen ohne 0) eingeben'
      read (*,*) n
