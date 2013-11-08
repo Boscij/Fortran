@@ -1,7 +1,6 @@
 program ratespiel
-  integer :: r, l, k, Zahl, Anzahl, flag, pruef
+  integer :: r, l, k, Zahl, Anzahl
   character(len=1) :: a, b
-flag = 0
 outer : do
   Anzahl = 0
   do     
@@ -12,11 +11,6 @@ outer : do
   end do
 
   Zahl = int(floor(( r + l ) / 2.0))
-  pruef = Zahl
-  if ( (r == Zahl) .or. (l == Zahl)  ) then
-     write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
-     exit outer
-  end if
   write (*,*) Zahl, 'zahl'
   do
      do
@@ -42,20 +36,10 @@ outer : do
      if ( k /= 0 ) then
         if ( (r - l) == 2 ) then
            if ( k == 1 ) then
-              if ( Zahl == r .or. flag == -1 ) then
-                 write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
-                 exit outer
-              end if
-              flag = 1
               Zahl = Zahl + 1
            else
-              if ( Zahl == l .or. flag == 1 ) then
-                 write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
-                 exit outer
-              else
-                 Zahl = Zahl - 1
-              end if
-              flag = -1
+              write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
+              exit outer
            end if
         else
            if ( k == 1) then
@@ -70,7 +54,7 @@ outer : do
            write (*,*) 'Eingaben widersprechen sich, obere Grenze ueberschritten, Spiel wird beendet'
            exit outer
         end if
-        if ( Zahl < l .or. ( pruef == Zahl)) then
+        if ( Zahl < l) then
            write (*,*) 'Eingaben widersprechen sich, untere Grenze unterschritten, Spiel wird beendet'
            exit outer
         end if
@@ -81,7 +65,7 @@ outer : do
 write (*,*) 'Es wurden ',Anzahl,'Versuche zum "erraten" der Zahl benoetigt'
 write (*,*) 'Soll das Spiel wiederholt werden?(ja oder nein)'
 read (*,*) b
-if ( b /= 'j') exit
+if ( b == 'n') exit
 end do outer
 end program ratespiel
 
