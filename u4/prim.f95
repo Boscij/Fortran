@@ -1,9 +1,11 @@
-program primz
+module primz
   implicit none 
-  integer :: Zahl
-  write (*,*) 'Zahl > 3 eingeben'
-  read (*,*) Zahl
-write (*,*) prim(Zahl)
+!  integer :: Zahl
+!  write (*,*) 'Zahl > 3 eingeben'
+!  read (*,*) Zahl
+!write (*,*) prim(Zahl)
+private
+public :: prim, umkehrzahl
 
 contains
 
@@ -19,4 +21,10 @@ contains
            end if
         end do
   end function prim
-end program primz
+
+...
+end module primz
+
+use primz
+
+f95 prim.f95 a8.f95 -o a8
