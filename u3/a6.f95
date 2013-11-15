@@ -40,7 +40,7 @@ outer : do
      end do
      Anzahl = Anzahl + 1
      if ( k /= 0 ) then
-        if ( (r - l) == 2 ) then
+        if ( (r - l) == 1 ) then
            if ( k == 1 ) then
               if ( Zahl == r .or. flag == -1 ) then
                  write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
@@ -70,7 +70,7 @@ outer : do
            write (*,*) 'Eingaben widersprechen sich, obere Grenze ueberschritten, Spiel wird beendet'
            exit outer
         end if
-        if ( Zahl < l .or. ( pruef == Zahl)) then
+        if ( Zahl < l .or. ( pruef == Zahl) .or. (Zahl == r)) then
            write (*,*) 'Eingaben widersprechen sich, untere Grenze unterschritten, Spiel wird beendet'
            exit outer
         end if
