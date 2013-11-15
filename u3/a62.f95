@@ -9,7 +9,7 @@ outer : do
      read (*,*) r
      if ( l < r ) exit
   end do
-  write (*,*) r - l + 1, 'Moeglichkeiten'
+!  write (*,*) r - l + 1, 'Moeglichkeiten'
  middle : do
   Zahl = int(floor(( r + l ) / 2.0))
   write (*,*) Zahl, 'zahl'
