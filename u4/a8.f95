@@ -70,7 +70,7 @@ contains
           exit
        end if
     end do
-    do z = 1,AZ
+    do z = 1,AZ0
        g = mod(a,10)
        a = a/10
        umkehrzahl = umkehrzahl + g*10**(AZ-z)
