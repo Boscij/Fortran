@@ -44,6 +44,9 @@ pruef = Zahl
 
      Anzahl = Anzahl + 1
      if ( k /= 0 ) then
+<<<<<<< HEAD
+        if ( (r - l) == 1 ) then
+=======
         ! if ( (r - l) == 2 ) then
         !    if ( k == 1 ) then
         !       if ( Zahl == r .or. flag == -1 ) then
@@ -75,6 +78,7 @@ end if
 
         if ( (r - l) == 1 ) then! write (*,*) 'test'
 
+>>>>>>> 3cb9572e6672b9678d97fa76f643b133c41f437a
            if ( k == 1 ) then
               if ( Zahl == r .or. flag == 1) then
                  write (*,*) 'Eingaben widersprechen sich, Spiel wird beendet'
@@ -105,6 +109,16 @@ end if
               Zahl = int(floor(( l + Zahl - 1) / 2.0))
            end if
         end if
+<<<<<<< HEAD
+        if ( Zahl > r) then
+           write (*,*) 'Eingaben widersprechen sich, obere Grenze ueberschritten, Spiel wird beendet'
+           exit outer
+        end if
+        if ( Zahl < l .or. ( pruef == Zahl) .or. (Zahl == r)) then
+           write (*,*) 'Eingaben widersprechen sich, untere Grenze unterschritten, Spiel wird beendet'
+           exit outer
+        end if
+=======
         ! if ( Zahl > r) then
         !    write (*,*) 'Eingaben widersprechen sich, obere Grenze ueberschritten, Spiel wird beendet'
         !    exit outer
@@ -120,6 +134,7 @@ end if
      end if
 write (*,*) 'r',r,'l',l
 
+>>>>>>> 3cb9572e6672b9678d97fa76f643b133c41f437a
         write (*,*) Zahl, 'Zahl'
      end if
      if ( k == 0) exit
