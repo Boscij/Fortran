@@ -1,9 +1,8 @@
-program fibo_rekursiv
-  
+module fibo_rekursiv
   implicit none 
-  integer :: n
-  read (*,*) n
-  write (*,*) fib(n), 'Fibonaccizahl'
+
+  private
+  public :: fib
 
 contains
 
@@ -16,6 +15,6 @@ contains
    end if
    return
   end function fib
-end program fibo_rekursiv
+end module fibo_rekursiv
 
 
