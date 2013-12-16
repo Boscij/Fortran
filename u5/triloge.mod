@@ -1,0 +1,69 @@
+GFORTRAN module version '6' created from trilogie.f95 on Sat Dec 14 22:54:24 2013
+MD5:dc8285fad00b392ff565575908ab36d8 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () (2) (3) () () (4) () () () () () () () () () ()
+() (5) () ())
+
+()
+
+(('text' 'triloge' 6))
+
+()
+
+()
+
+()
+
+(7 'false' 'triloge' 'false' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (DERIVED 8 0 0 DERIVED ()) 0 0 () (STRUCTURE
+(DERIVED 8 0 0 DERIVED ()) 0 (((CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '-1')
+())) ()) () 0 () () () 0 0)
+4 'gleich' 'triloge' 'gleich' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (LOGICAL 4 0 0 LOGICAL ()) 9 0
+(10 11) () 4 () () () 0 0)
+12 'maybe' 'triloge' 'maybe' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (DERIVED 8 0 0 DERIVED ()) 0 0 () (STRUCTURE
+(DERIVED 8 0 0 DERIVED ()) 0 (((CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '0')
+())) ()) () 0 () () () 0 0)
+5 'nicht' 'triloge' 'nicht' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (DERIVED 8 0 0 DERIVED ()) 13 0
+(14) () 5 () () () 0 0)
+8 'trilog' 'triloge' 'trilog' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0 ((15 'konst'
+(INTEGER 4 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0
+36695116)
+16 'true' 'triloge' 'true' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (DERIVED 8 0 0 DERIVED ()) 0 0 () (STRUCTURE
+(DERIVED 8 0 0 DERIVED ()) 0 (((CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1')
+())) ()) () 0 () () () 0 0)
+2 'und' 'triloge' 'und' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (DERIVED 8 0 0 DERIVED ()) 17 0 (18
+19) () 2 () () () 0 0)
+18 'l' '' 'l' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+3 'oder' 'triloge' 'oder' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (DERIVED 8 0 0 DERIVED ()) 20 0 (21
+22) () 3 () () () 0 0)
+6 'umwandler' 'triloge' 'umwandler' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (CHARACTER 1 0 0
+CHARACTER ((CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1'))) 23 0 (24) () 6
+() () () 0 0)
+19 'r' '' 'r' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+14 'tri' '' 'tri' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+10 'l' '' 'l' 9 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+11 'r' '' 'r' 9 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+24 'tri' '' 'tri' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+21 'l' '' 'l' 20 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+22 'r' '' 'r' 20 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+)
+
+('false' 0 7 'gleich' 0 4 'maybe' 0 12 'nicht' 0 5 'trilog' 0 8 'true' 0
+16 'und' 0 2)
