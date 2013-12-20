@@ -16,6 +16,7 @@ contains
     KREUZ(1) = a(2)*b(3)-a(3)*b(2)
     KREUZ(2) = a(3)*b(1)-a(1)*b(3)
     KREUZ(3) = a(1)*b(2)-a(2)*b(1)
+    !KREUZ=(/ ..., ..., ... /)
   end function KREUZ
 
   function F (a,b)
