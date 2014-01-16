@@ -2,8 +2,8 @@ module triloge
   implicit none
 
   private
-  public :: UND, trilog, operator(.and.), operator(.or.),&
-       & operator(.not.), NICHT, operator(==), GLEICH, TEXT, false,&
+  public ::  trilog, operator(.and.), operator(.or.),&
+       & operator(.not.), operator(==), TEXT, false,&
        & maybe, true
 
   type trilog

@@ -16,18 +16,18 @@ contains
   end subroutine zufall_init
 
   function zufall()
-    real :: zufall
-    real :: a, b
+    real(kind=pr) :: zufall
+    real(kind=pr) :: a, b
     a=12054.67293087436
     b=0.3183287916948132
-    zufall=a*zahl+b - floor(a*zahl+b)
+    zufall=abs(a*zahl+b - int(a*zahl+b))
+    zahl=zufall
   end function zufall
 
   function wuerfel(I_min,I_max)
     integer :: I_min,I_max
     integer :: wuerfel
-    zahl=zufall()
-    wuerfel = int(floor(I_min+(I_max-I_min + 1)*zahl))
+    wuerfel = int(floor(I_min+(I_max-I_min + 1)*zufall()))
   end function wuerfel
   
 end module pseudo_z
