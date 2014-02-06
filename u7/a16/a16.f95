@@ -14,7 +14,7 @@ out: do
   allocate(A(n,n))
   do i=1,n
      do j=1,n
-        A(i,j)=0
+        A(i,j)=0 !A=0
      end do
   end do
   i=1
@@ -57,15 +57,16 @@ out: do
         end do inner
      end if
   end do outer
-  ! i,j bei 1 oder 0 beginnen?
+  ! i,j bei 1 oder 0 beginnen? Wenn nicht anders bei allocate oder bei deklaration wenn statisches feld definiert 1
   do j=1,2
      write (*,*)
   end do
 
   do i=1,n
      write( UNIT=stri1, FMT='(I2.2)' )  n   ! Anzahl Zahlen in Zeile !
-     write( UNIT=stri2, FMT='(I2.2)' )  3  ! Tabulatorpos. !
-     write( UNIT=*, FMT='(T'//stri2//','//stri1//'I6)' )  A(i,1:n)
+    ! write( UNIT=stri2, FMT='(I2.2)' )  3  ! Tabulatorpos. !
+    ! write( UNIT=*, FMT='(T'//stri2//','//stri1//'I6)' )  A(i,1:n)
+write(*,'(T3,'//stri1//'I6)') A(i,1:n)
      do j=1,2
         write (*,*)
      end do
@@ -76,12 +77,12 @@ out: do
   do i=1,n
      summe = 0
      do j=1,n
-        summe=summe+A(i,j)
+        summe=summe+A(i,j) !summe=sum(i,:)
      end do
-     !        write (*,*) i ???
+            write (*,*) i
      
      write (*,*) summe
-     if ( i == 1 ) then
+     if ( i == 1 ) then !vor die schleife
         test = summe
      else
         if ( test == summe ) then

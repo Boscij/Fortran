@@ -9,7 +9,7 @@ module tourede
      integer :: h,m
      real :: s
   end type Fahrzeit
-
+!eigentlich noch ein typ aus Fahrzeit und character
   type(Fahrzeit), parameter :: Fahrzeit_Null=Fahrzeit(0,0,0.0)
   
   interface operator ( + )

@@ -43,7 +43,8 @@ program touredefrance
 
   write (*,*) 'Ergebnisse der Fahrt: Name Stunden Minuten Sekunden'
   do i=1,Anzahl
-     write (*,*) Liste_Name(i), Liste_Zeit(i)
+!     write (*,*) Liste_Name(i), Liste_Zeit(i)
+     write (*,'(A,I5,A1,I2,A1,F5.2)') Liste_Name(i),Liste_Zeit(i)%h,':',Liste_Zeit(i)%m,':', Liste_Zeit(i)%s
   end do
   write (*,*) Anzahl, 'Teilnehmer sind mitgefahren'
 
