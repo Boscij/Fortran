@@ -70,7 +70,11 @@ write(*,'(T3,'//stri1//'I6)') A(i,1:n)
      do j=1,2
         write (*,*)
      end do
+
+
   end do
+  write (*,*) A(1,:)
+  write (*,*) A(:,1)
 
   write (*,*) 'Zeilensummen'
 
