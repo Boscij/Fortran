@@ -1,0 +1,156 @@
+* Character
+** Definition
+   - Character(<int>):: ch
+   - Character(len=<int>):: ch
+   - Character:: ch !Ch hat die Länge 1
+     z.B.
+     - character(4)::ch
+     - Integer, Parameter::n=16
+     - character(n)::ch
+** Bedeutung:"*"
+   - falls character paramter ist
+   - falls character eingabeparameter ist
+     z.B.
+     - character(*), parameter::ch='Haus',c='aus'
+     - Achtung: c hat auch Länge 4 -> c='aus_'
+     - Function(c)
+       character(x)::c
+** Operatoren
+   - // Konkatenation
+   - 'Eins'//'Zwei'->'EinsZwei' 
+   - Vergleichopearatoren <,>,<=,>=,==,/=
+     ->basierend auf ASCII-Code
+     ->endständige Leerzeichen, unberücksichtg
+     Bsp 'Eins'=='Eins__'=.true.
+** Zugriff:
+   - character der Länge n verhält sich wie ein Feld der Länge n von character(1)-Variablen
+     Bsp: Character(10)::ch='Hallo Welt'
+     ch(2:4)  !all
+     ch(:5)  !hallo
+     ch(7:)  !welt
+     ch(7:)='XYZ'  !ch=hallo_XYZ_     
+** Funktionen
+   character(10)::ch='Hallo du'
+   character(5)::dh='Hallo'
+** Zuweisung:
+   ch=dh -> ch = 'Hallo_..._'
+   dh='Funktion'->dh='Funkt'
+   - LEN(c)-> Len(ch)=10
+   - LEN_TRIM(ch)->LEN_TRIM(ch)=8
+   - TRIM(c): TRIM(ch)='Hallo du'
+   - ADJUSTL(c): ADJUSTL('__abc')='abc__'
+   - ADJUSTR(c): ADJUSTR(ch)='__Hallo_du'
+   - REPEAT(c,i):Repeat('abc',2)='abcabc'
+   - weitere:INDEX,SCAN,VERIFY
+** Konvertierung von Character zu Integer
+*** I
+     -WRITE(ch,*);(schreibt Inhalt von i in ch)
+     -READ(ch,*); (liest Wert aus ch)
+*** II über Funktionen
+    CHAR(i),ACHAR(i) geben zu i zugeordnetes Zeichen zurück nach ASCII
+    ICHAR(ch),IACHAR(ch) geben zu ch zugeordenten wert zurück nach ASCII
+    -> über DO-Schleife, vergl. Klausuraufgabe    
+*
+** Klausuraufgabe
+   leere Zeichen ch aus 'Eingabe.dat'
+   falls Zeichen cha Ziffer
+   - ja
+     - sind wir in einer Zahl
+       - ja(*)
+	 hänge Ziffer hinten an
+       - nein(+)
+	 - sind jetzt in einer Zahl
+	 - setze zahl auf diese ziffer
+	 - anfangsziffer(falls /= 0)
+   - nein(**)
+     beende Zahl
+     Schreibe Zahl in Datei
+     addiere Zahl auf Gesamtsumme
+     -
+*** Programm
+    #+begin_src fortran
+      PROGRAM zahlen_lesen
+        IMPLICIT NONE
+        INTEGER, PARAMETER:: iazero=IACHAR('o')
+        INTEGER :: ios, summe = 0,anz,zahl=0
+        INTEGER, DIMENSION(9)::anzahl
+        CHARACTER :: ch
+        LOGICAL :: in_zahl=.FALSE.
+            
+        OPEN(34,fiel='eingabe.dat',iosata=ios,status='old') 
+        !status, Datei soll schon vorhanden sein
+        !34 sollte größer als 10 sein!
+            
+        IF(ios/= 0)THEN !FEHLER
+           STOP
+        END IF
+            
+        OPEN(35,file='ausgabe.dat',iostat=ios,status='new')
+        !status kann weggelassen werden (falls nicht verlangt)
+        IF(ios /= 0) THEN
+           CLOSE(34)
+           STOP
+        END IF
+            
+        DO
+           READ(34,FMT='(A1)',advance='no') ch
+           ! bei advance benötigt man Formatangabe -> kein *!!!
+           IF(ios==0) THEN           
+           !nur solange kein Fehler auftritt, ansonsten Zeile zu ende
+              IF(ch <= '9'.and ch >= '0') THEN !muss Zahl sein
+                 IF(in_zahl) THEN
+                    zahl=10+zahl+IACHAR(ch)-iazero
+                    ! iachar(ch)-iazero liefert Ziffer in ch
+                 ELSE IF(ch /= 0) THEN !führende Nullen ignorieren
+                    in_zahl=.TRUE.
+                    zahl=IACHAR(ch)-iazeor
+                    anzahl(zahl)=anzahl(zahl)+1
+                 END IF
+              ELSE IF(in_zahl) THEN !nun nicht mehr in Zahl
+                 in_zahl =.FALSE.
+                 WRITE(35,*) zahl
+                 summe=summe+zahl
+              END IF
+            ELSE IF !ende der Zeile erreicht
+               EXIT
+            END IF
+        END DO
+        IF(in_zahl)THEN
+           WRITE(35,*)zahl
+           summe=summe+zahl
+        END IF
+        WRITE(35,*)summe
+        anz=SUM(anzahl)
+        WRITE(35,*) anz
+        WRITE(35,*) 'Relative Häufigkeiten:',anzahl/REAL(anz)
+        !sonst integerdivision
+        CLOSE(34) 
+      !wichtig bei Prof. Walter alle Dateien schließen, Felder deallokieren, 
+      !Pointeradressen freigeben
+        CLOSE(35)
+      END PROGRAM zahlen_lesen
+    #+end_src
+** Format
+***   Aufbau: '(...)'
+   identifier: 
+   - A String
+   - I Integer
+   - X Leerzeichen
+   - D Gleitkommazahl  
+*** Schreibweise:
+    - A4  Character der Länge 4
+    - I6  Integer mit 6 Ziffern
+    - 3X  3 Leerzeichen
+    - D7.2 GKZ mit 7 Zeichen (inkl. Dezimalpkt u. 2 Nachkommastellen)
+*** Bsp
+    #+begin_src fortran
+          integer, dimension(2,2)::A
+          real :: f=0.5
+            A= !Matrix eingeben
+            write(*,*) A gibt Matrix schlecht aus(ohne Leerzeichen)
+            do i = 1,2
+               write(*,fmt='(I2,1X,A1,1X)I2') A(i,1,'|',A(i,z)
+            end do
+      
+            bessere Ausgabe
+    #+end_src

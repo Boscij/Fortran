@@ -12,7 +12,7 @@ contains
        zahl = 1
     else
        zahl = fib(z-1) + fib(z-2)
-   end if
+   end if 
    return
   end function fib
 end module fibo_rekursiv

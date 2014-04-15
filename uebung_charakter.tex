@@ -1,0 +1,116 @@
+% Created 2014-04-11 Fr 13:32
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+
+\title{uebung$_{\mathrm{charakter}}$}
+\author{Sebastian Domaschke}
+\date{11 April 2014}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+\section{Character}
+\label{sec-1}
+
+\subsection{Definition}
+\label{sec-1.1}
+
+\begin{description}
+\item Character(<int>):: ch
+\item Character(len=<int>):: ch
+\item Character:: ch !Ch hat die Länge 1
+     z.B.
+
+\begin{description}
+\item character(4)::ch
+\item Integer, Parameter::n=16
+\item character(n)::ch
+\end{description}
+
+\end{description}
+\subsection{Bedeutung:"*"}
+\label{sec-1.2}
+
+\begin{itemize}
+\item falls character paramter ist
+\item falls character eingabeparameter ist
+     z.B.
+
+\begin{itemize}
+\item character(*), parameter::ch='Haus',c='aus'
+\item Achtung: c hat auch Länge 4 -> c='aus_'
+\item Function(c)
+       character(x)::c
+\end{itemize}
+
+\end{itemize}
+\subsection{Operatoren}
+\label{sec-1.3}
+
+\begin{itemize}
+\item \emph{/ Konkatenation
+\item `Eins'/\}'Zwei'->'EinsZwei'
+\item Vergleichopearatoren <,>,<=,>=,==,/=
+     ->basierend auf ASCII-Code
+     ->endständige Leerzeichen, unberücksichtg
+     Bsp `Eins'=='Eins__'=.true.
+\end{itemize}
+\subsection{Zugriff:}
+\label{sec-1.4}
+
+\begin{itemize}
+\item character der Länge n verhält sich wie ein Feld der Länge n von character(1)-Variablen
+     Bsp: Character(10)::ch='Hallo Welt'
+     ch(2:4)  !all
+     ch(:5)  !hallo
+     ch(7:)  !welt
+     ch(7:)='XYZ'  !ch=hallo$_{\mathrm{XYZ}}$\_{}
+\end{itemize}
+\subsection{Funktionen}
+\label{sec-1.5}
+
+   character(10)::ch='Hallo du'
+   character(5)::dh='Hallo'
+\subsection{Zuweisung:}
+\label{sec-1.6}
+
+   ch=dh -> ch = `Hallo_\ldots{}_'
+   dh='Funktion'->dh='Funkt'
+\begin{itemize}
+\item LEN(c)-> Len(ch)=10
+\item LEN$_{\mathrm{TRIM}}$(ch)->LEN$_{\mathrm{TRIM}}$(ch)=8
+\item TRIM(c): TRIM(ch)='Hallo du'
+\item ADJUSTL(c): ADJUSTL(`__abc')='abc__'
+\item ADJUSTR(c): ADJUSTR(ch)='__Hallo$_{\mathrm{du}}$'
+\item REPEAT(c,i):Repeat(`abc',2)='abcabc'
+\item weitere:INDEX,SCAN,VERIFY
+\end{itemize}
+\subsection{Konvertierung von Character zu Integer}
+\label{sec-1.7}
+
+\subsubsection{I}
+\label{sec-1.7.1}
+
+     -WRITE(ch,*);(schreibt Inhalt von i in ch)
+     -READ(ch,*); (liest Wert aus ch)
+\subsubsection{II über Funktionen}
+\label{sec-1.7.2}
+
+    CHAR(i),ACHAR(i) geben zu i zugeordnetes Zeichen zurück nach ASCII
+    ICHAR(ch),IACHAR(ch) geben zu ch zugeordenten wert zurück nach ASCII
+    -> über DO-Schleife, vergl. Klausuraufgabe    
+
+\end{document}

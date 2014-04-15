@@ -22,8 +22,7 @@ contains
     do i=zeilen,1,-1
        text = ''
        do j=1,spalten
-          k = matrix(i,j)
-          select case(k)
+          select case(matrix(i,j))
           case (-1)
              cc = 'O'
           case (0)
@@ -31,10 +30,20 @@ contains
           case (1)
              cc = 'X'
           end select
-          text = trim(text)//cc
+          text = trim(text)//' '//cc
        end do
        write (*,*) text
     end do
+    write (*,'(A2)',advance='no') '  ' 
+    do i = 1,2*spalten-1
+       write (*,fmt='(A1)',advance='no') '='
+    end do
+    write (*,*) 
+    write (*,'(A2)',advance='no') '  ' 
+    do i = 1,spalten
+       write (*,fmt='(I1A1)',advance='no') i,' '
+    end do
+    write (*,*) 
   end subroutine ausgabe
   
   function Gewinn_Nr (matrix)
@@ -71,7 +80,7 @@ contains
     if (zeilen >= 4 .and. spalten >= 4) then
        do i = 1,spalten-3
           do j = 1, zeilen-3
-             k = 0
+             k = 0 	! ABS(SUM((/ (matrix(j-1+u, i-1+u), u = 0, 4) /)))
              do u = 1,4
                 k = k + matrix(j-1+u,i-1+u)
    !             write(*,*) k, 'h'
