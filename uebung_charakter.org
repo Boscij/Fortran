@@ -77,13 +77,14 @@
         CHARACTER :: ch
         LOGICAL :: in_zahl=.FALSE.
             
-        OPEN(34,fiel='eingabe.dat',iosata=ios,status='old') 
+        OPEN(34,file='eingabe.dat',iosata=ios,status='old') 
         !status, Datei soll schon vorhanden sein
         !34 sollte größer als 10 sein!
             
         IF(ios/= 0)THEN !FEHLER
            STOP
         END IF
+
             
         OPEN(35,file='ausgabe.dat',iostat=ios,status='new')
         !status kann weggelassen werden (falls nicht verlangt)
