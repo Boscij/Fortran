@@ -5,7 +5,7 @@ PROGRAM spiel
   type(cycle) :: headd
 
   ! Einlesen der Daten und erstellen der Liste
-  headd=build_cycle('kreim.dat')
+   call build_cycle('kreim.dat',headd)
 
   ! Ausgabe bis zum Ende des Spiels
   WRITE (*,*) "Folgende Mitspieler sind im Kreis"
