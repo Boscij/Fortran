@@ -1,8 +1,8 @@
 program a19
   use a19_module
   implicit none
-  type(queue) :: test
-  logical     :: tttt
+!  type(queue) :: test
+!  logical     :: tttt
   integer     :: Kassen, i,mi,j
   real        :: Wahrscheinlichkeit, h
   type(queue), dimension(:), allocatable :: Feld
@@ -18,7 +18,7 @@ program a19
      if ((Wahrscheinlichkeit <= 1.0) .and. (Wahrscheinlichkeit >= 0.0)) &
           & exit
   end do
-  Wahrscheinlichkeit = real(Wahrscheinlichkeit)
+!  Wahrscheinlichkeit = real(Wahrscheinlichkeit)
 !  write (*,*) Wahrscheinlichkeit, Kassen
 
   allocate(Feld(Kassen))
@@ -27,7 +27,7 @@ program a19
      call init(Feld(i))
   end do
 
-  do j=1,12*7*60*60
+  do j=1,12*7*60!*60
      call random_number(h)
      if (h .lt. Wahrscheinlichkeit) then
         call random_number(h)
