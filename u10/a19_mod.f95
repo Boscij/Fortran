@@ -11,6 +11,8 @@ module a19_module
      type(node), pointer :: tail
   end type queue
 
+
+
 contains
   subroutine init(q)
     type(queue), intent (out):: q
@@ -22,8 +24,9 @@ contains
   function empty(q)
     type(queue) :: q
     logical :: empty
-    empty=.false.
-    if(q%laenge == 0) empty=.true.
+!    empty=.false.
+!    if(q%laenge == 0) empty=.true.
+    empty=(q%laenge == 0)
   end function empty
 
   subroutine enqueue(q,l)
