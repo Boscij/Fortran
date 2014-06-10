@@ -1,0 +1,52 @@
+program superm
+  use queuemod
+  implicit none
+  integer::k,zeit,wageninh,kurz,j,i
+  real::w,zufall
+  logical::aenderung
+  type(queue),dimension(:),allocatable::kassen
+
+  call random_seed()
+
+  write(*,*)"wieviel kassen stehen zur verfuegung?"
+  read(*,*)k
+  write(*,*)"mit welcher wahrscheinlichkeit taucht ein kunde pro sekunde auf?"
+  read(*,*)w
+
+  allocate(kassen(k))  
+
+  do zeit=1,100                          !i entspricht sekunden seit beginn
+    aenderung=.false.                !wird zu beginn jeder sekunde auf falsch gesetzt
+    call random_number(zufall)
+    if(zufall<w)then                          !nur wenn eine kunde dazukommt,passiert was
+      call random_number(zufall)
+      wageninh=floor(10+(291)*zufall)          !zahl zwischen 10 und 300
+      kurz=minloc(kassen%laenge,1)       !kleinster laengenwert entspr. kuerzester schlange, es interessiert nur ein wert
+      call enqueue(kassen(kurz),wageninh)       !wagen wird ausgewaehlter schlange hinzugefuegt
+      aenderung=.true.                        !schlange wurde geaendert
+    end if
+    do j=1,k                                     !inhaltreduzierschleife
+      if(.not.empty(kassen(j)))then              !leere schlangen werden ignoriert
+        kassen(j)%head%inhalt=kassen(j)%head%inhalt-1     !inhalt aller erstes wagen inkl neuer -1
+      end if
+    end do
+    do j=1,k                                          !wagenloeschschleife
+      if(.not.empty(kassen(j)).and.kassen(j)%head%inhalt==0)then             !wagen ist nach bedienvorgang leer     
+        call dequeue(kassen(j))                                   !wagen wird geloescht
+        aenderung=.true.                  !schlange wurde geaendert
+      end if
+    end do 
+    if(aenderung) then
+      write(*,*)
+      write(*,*)"aktuelle zeit in sekunden:",zeit        !ausgabe zeit und schlangen
+      write(*,*) 
+      do i=1,k
+        call put(kassen(i))
+      end do
+    end if
+  end do
+  
+do j=1,k
+write(*,*)kassen(j)%laenge
+end do
+end program superm

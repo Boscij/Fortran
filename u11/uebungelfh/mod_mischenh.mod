@@ -1,0 +1,70 @@
+GFORTRAN module version '6' created from mod_mischenh.f95 on Tue May 27 21:03:31 2014
+MD5:cbbaab12b6ceb6957cad4dacf4950986 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () (2) () () () () () ()
+() () ())
+
+()
+
+()
+
+()
+
+()
+
+()
+
+(3 'baueheap' 'mod_mischenh' 'baueheap' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0
+UNKNOWN ()) 4 0 (5) () 0 () () () 0 0)
+6 'filecomp' 'mod_mischenh' 'filecomp' 1 ((DERIVED UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0
+((7 'unitn' (INTEGER 4 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (8 'inhalt' (
+INTEGER 4 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0
+18786922)
+9 'mod_mischenh' 'mod_mischenh' 'mod_mischenh' 1 ((MODULE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0
+() () () 0 0)
+2 'small' 'mod_mischenh' 'small' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (LOGICAL 4 0 0
+LOGICAL ()) 10 0 (11 12) () 2 () () () 0 0)
+13 'sortiereheap' 'mod_mischenh' 'sortiereheap' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT)
+(UNKNOWN 0 0 0 UNKNOWN ()) 14 0 (15) () 0 () () () 0 0)
+16 'tausche' 'mod_mischenh' 'tausche' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 17 0
+(18 19) () 0 () () () 0 0)
+20 'versickern' 'mod_mischenh' 'versickern' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE RECURSIVE ALWAYS_EXPLICIT) (
+UNKNOWN 0 0 0 UNKNOWN ()) 21 0 (22 23 24) () 0 () () () 0 0)
+18 'x' '' 'x' 17 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+11 'erstes' '' 'erstes' 10 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+12 'zweites' '' 'zweites' 10 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+19 'y' '' 'y' 17 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+22 'feld' '' 'feld' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () (1 0
+ASSUMED_SHAPE (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') ()) 0 () () ()
+0 0)
+23 'groesse' '' 'groesse' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () ()
+() 0 0)
+24 'i' '' 'i' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+5 'feld' '' 'feld' 4 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () (1 0
+ASSUMED_SHAPE (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') ()) 0 () () ()
+0 0)
+15 'feld' '' 'feld' 14 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () (1 0
+ASSUMED_SHAPE (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') ()) 0 () () ()
+0 0)
+)
+
+('baueheap' 0 3 'filecomp' 0 6 'mod_mischenh' 0 9 'small' 0 2
+'sortiereheap' 0 13 'tausche' 0 16 'versickern' 0 20)

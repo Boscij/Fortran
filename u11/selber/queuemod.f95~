@@ -1,0 +1,73 @@
+module queuemod
+  implicit none
+  
+  type node             !listenteil
+    integer::inhalt
+    type(node),pointer:: naechstes=>null()
+  end type node
+  
+  type queue                  !schlangenpointer
+    integer::laenge=0
+    type(node),pointer:: head=>null(),tail=>null()
+  end type queue
+
+  interface put
+    module procedure put
+  end interface
+
+contains
+  
+  logical function empty(s)                ! Ueberpruefen ob Schlange leer
+    type(queue),intent(in)::s
+    empty=.not.associated(s%head)
+  end function empty
+  
+  subroutine enqueue(s,groesse)
+    type(queue)::s,hilfsp
+    integer::groesse   
+    if (.not.associated(s%head))then      !nur allererster eintrag
+      allocate(s%head)
+      allocate(s%tail)
+      hilfsp%head=>s%head
+      hilfsp%head%inhalt=groesse    
+      s%tail=>hilfsp%head                   !letzter eintrag 
+      s%laenge=1                             
+    else
+      hilfsp%head=>s%tail                     !aufruf letzter eintrag
+      allocate(hilfsp%head%naechstes) ! neuen knoten erstellen und verlinken
+      hilfsp%head=>hilfsp%head%naechstes ! mit neuem knoten arbeiten
+      hilfsp%head%inhalt=groesse  
+      s%tail=>hilfsp%head
+      s%laenge=s%laenge+1
+   end if
+  end subroutine enqueue
+
+  subroutine dequeue(s)
+    type(queue)::s,hilfsp
+    if(empty(s))then 
+      write(*,*)"keine elemente in warteschlange"
+    else
+      hilfsp%head=>s%head%naechstes            !hilfspointer zeigt auf nachfolger vom aktuellen kopf
+      deallocate(s%head)                      !speicher von zu loeschendem eintrag freigeben
+      s%head=>hilfsp%head                      !altes zweites element wird neues erstes    
+      s%laenge=s%laenge-1
+    end if
+end subroutine dequeue
+
+  subroutine put(s)
+    type(queue)::s
+    type(node),pointer::danach
+    if(empty(s))then 
+      write(*,*)"warteschlange ist leer"
+    else
+      danach=>s%head
+      do while(associated(danach))
+        write(*,fmt='(2I4)', advance='no')danach%inhalt
+        danach=>danach%naechstes
+      end do
+    write(*,*)
+    end if
+    write(*,*)
+  end subroutine put
+
+end module queuemod

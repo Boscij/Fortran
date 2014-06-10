@@ -25,3 +25,4 @@ program a12
   write (*,*) 'Seitenzahl',seitenzahl,'M1',nint(m(1)),'M2',nint(m(2)),'M3',nint(m(3)),'M4',nint(m(4))
 end do
 end program a12
+

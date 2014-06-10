@@ -138,6 +138,7 @@
    - I Integer
    - X Leerzeichen
    - D Gleitkommazahl  
+
 *** Schreibweise:
     - A4  Character der Länge 4
     - I6  Integer mit 6 Ziffern
